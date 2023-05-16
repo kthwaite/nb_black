@@ -1,0 +1,34 @@
+[project]
+name = "nb_black"
+authors = [
+    {name = "Khoa Duong", email = "dnanhkhoa@live.com"},
+]
+description="A simple extension for Jupyter Notebook and Jupyter Lab to beautify Python code automatically using Black."
+readme = "README.md"
+requires-python = ">=3.10"
+keywords=["black-formatter", "black-beautifier", "black", "jupyterlab-extension", "jupyter-notebook-extension"]
+license = {text = "MIT"}
+classifiers = [
+        "Development Status :: 5 - Production/Stable",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 2",
+        "Programming Language :: Python :: 3",
+        "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "yapf >= 0.33; python_version < '3.10'",
+    "black >= 23.3; python_version >= '3.10'",
+    "ipython",
+]
+dynamic = ["version"]
+
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[tools.setuptools]
+zip_safe = false
+py_modules=["nb_black", "lab_black"]
+license_files = "LICENSE"
